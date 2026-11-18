@@ -1,7 +1,7 @@
 :root { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1b2833; background: #f7f9f8; font-synthesis: none; --navy: #172638; --green: #176b4d; --muted: #56656d; --border: #d9e1de; }
 * { box-sizing: border-box; }
 body { margin: 0; line-height: 1.5; }
-button, input { font: inherit; }
+button, input, select { font: inherit; }
 button { cursor: pointer; border: 1px solid var(--green); border-radius: 5px; background: var(--green); color: white; padding: 12px 20px; font-weight: 600; }
 button:hover { background: #12543c; }
 button:disabled { opacity: .65; cursor: wait; }
@@ -24,7 +24,7 @@ h2 { font-size: 1.6rem; line-height: 1.2; font-weight: 600; }
 .login-content h2 { font-size: 2rem; margin-bottom: 8px; }
 form { display: flex; flex-direction: column; margin-top: 36px; }
 label { font-size: .875rem; font-weight: 600; margin-bottom: 8px; }
-input { width: 100%; border: 1px solid #aebbb8; border-radius: 5px; padding: 12px; margin-bottom: 22px; background: white; color: #1b2833; }
+input, select { width: 100%; border: 1px solid #aebbb8; border-radius: 5px; padding: 12px; margin-bottom: 22px; background: white; color: #1b2833; }
 form button { margin-top: 8px; }
 .error { color: #a12d2d; font-size: .9rem; }
 .footnote { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }

@@ -21,6 +21,12 @@ export class Database implements OnModuleDestroy {
       );
       CREATE TABLE IF NOT EXISTS segments (
         id TEXT PRIMARY KEY, name TEXT NOT NULL COLLATE NOCASE UNIQUE, owner TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS applications (
+        id TEXT PRIMARY KEY, name TEXT NOT NULL COLLATE NOCASE UNIQUE,
+        segment_id TEXT NOT NULL REFERENCES segments(id), owner TEXT NOT NULL,
+        lifecycle TEXT NOT NULL CHECK (lifecycle IN ('Production', 'UAT', 'Pre-Prod', 'Retired')),
+        criticality TEXT NOT NULL CHECK (criticality IN ('High', 'Medium', 'Low'))
       );`);
   }
 

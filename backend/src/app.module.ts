@@ -6,6 +6,8 @@ import { AuthService } from './auth/auth.service';
 import { Database } from './database';
 import { SegmentsController } from './segments/segments.controller';
 import { SegmentsService } from './segments/segments.service';
+import { ApplicationsController } from './applications/applications.controller';
+import { ApplicationsService } from './applications/applications.service';
 
 @Controller('api')
 export class HealthController {
@@ -13,5 +15,5 @@ export class HealthController {
   @Get('health') health() { return { status: 'ok' }; }
 }
 
-@Module({ controllers: [HealthController, AuthController, SegmentsController], providers: [Database, AuthService, AuthGuard, SegmentsService] })
+@Module({ controllers: [HealthController, AuthController, SegmentsController, ApplicationsController], providers: [Database, AuthService, AuthGuard, SegmentsService, ApplicationsService] })
 export class AppModule {}

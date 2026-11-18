@@ -1,8 +1,9 @@
 /** Render the authenticated portal foundation without unfinished feature links. */
 import type { User } from './api';
 import Segments from './Segments';
+import Applications from './Applications';
 
-interface Props { user: User; onLogout: () => void; error: string; page: 'home' | 'segments' }
+interface Props { user: User; onLogout: () => void; error: string; page: 'home' | 'segments' | 'applications' }
 
 export default function Shell({ user, onLogout, error, page }: Props) {
   return (
@@ -13,19 +14,20 @@ export default function Shell({ user, onLogout, error, page }: Props) {
         <nav aria-label="Portal">
           <a href="/" aria-current={page === 'home' ? 'page' : undefined}>Portal home</a>
           <a href="/segments" aria-current={page === 'segments' ? 'page' : undefined}>Segments</a>
+          <a href="/applications" aria-current={page === 'applications' ? 'page' : undefined}>Applications</a>
         </nav>
         <p className="rail-footer">LOCAL DEVELOPMENT</p>
       </aside>
       <div className="workspace">
         <header className="topbar">
-          <span>{page === 'home' ? 'Portal home' : 'Segments'}</span>
+          <span>{page === 'home' ? 'Portal home' : page === 'segments' ? 'Segments' : 'Applications'}</span>
           <div className="account">
             <span>{user.name}</span>
             <button className="secondary" onClick={onLogout}>Sign out</button>
           </div>
         </header>
         <main className="workspace-main">
-          {page === 'segments' ? <Segments isAdmin={user.role === 'admin'} /> : <>
+          {page === 'segments' ? <Segments isAdmin={user.role === 'admin'} /> : page === 'applications' ? <Applications isAdmin={user.role === 'admin'} /> : <>
           <p className="eyebrow">EQIP / PORTAL HOME</p>
           <h1>Welcome, {user.name}.</h1>
           <p className="muted lead">Your local portal session is active.</p>
