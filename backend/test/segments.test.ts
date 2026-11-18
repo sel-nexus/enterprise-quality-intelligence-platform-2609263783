@@ -53,6 +53,36 @@ describe('segments with file-backed SQLite', () => {
     }
   });
 
+  it('propagates a non-unique SQLite failure on create without partial writes', () => {
+    const existing = service.create({ name: 'Existing', owner: 'Owner' });
+    db.db.exec(`CREATE TABLE segment_write_probe (operation TEXT NOT NULL);
+      CREATE TRIGGER fail_segment_insert AFTER INSERT ON segments BEGIN
+        INSERT INTO segment_write_probe VALUES ('insert');
+        SELECT RAISE(ABORT, 'insert blocked by test trigger');
+      END;`);
+
+    let failure: unknown;
+    try { service.create({ name: 'New', owner: 'Other' }); } catch (error) { failure = error; }
+    expect(failure).toMatchObject({ code: 'ERR_SQLITE_ERROR', message: 'insert blocked by test trigger' });
+    expect(service.list()).toEqual([existing]);
+    expect(db.db.prepare('SELECT * FROM segment_write_probe').all()).toEqual([]);
+  });
+
+  it('propagates a non-unique SQLite failure on update without partial writes', () => {
+    const existing = service.create({ name: 'Existing', owner: 'Owner' });
+    db.db.exec(`CREATE TABLE segment_write_probe (operation TEXT NOT NULL);
+      CREATE TRIGGER fail_segment_update AFTER UPDATE ON segments BEGIN
+        INSERT INTO segment_write_probe VALUES ('update');
+        SELECT RAISE(ABORT, 'update blocked by test trigger');
+      END;`);
+
+    let failure: unknown;
+    try { service.update(existing.id, { name: 'Changed', owner: 'Other' }); } catch (error) { failure = error; }
+    expect(failure).toMatchObject({ code: 'ERR_SQLITE_ERROR', message: 'update blocked by test trigger' });
+    expect(service.list()).toEqual([existing]);
+    expect(db.db.prepare('SELECT * FROM segment_write_probe').all()).toEqual([]);
+  });
+
   it('enforces authentication, admin writes, validation, conflicts and missing ids over HTTP', async () => {
     const server = app.getHttpServer();
     await request(server).get('/api/v1/segments').expect(401);

@@ -1,4 +1,4 @@
-/** Display administrator-only inventory aggregates and a basic report. */
+/** Display restricted inventory aggregates and a basic report. */
 import { useEffect, useState } from 'react';
 
 interface OverviewData { counts: { segments: number; applications: number; activeUsers: number }; qualityScore: null }
@@ -7,7 +7,7 @@ const base = import.meta.env.VITE_API_BASE || '';
 /** Explain a failed overview or report request without exposing server details. */
 function errorMessage(status: number): string {
   if (status === 401) return 'Your session has expired. Please sign in again.';
-  if (status === 403) return 'Administrator access required.';
+  if (status === 403) return 'Administrator or executive access required.';
   return 'Unable to complete the request. Please try again.';
 }
 

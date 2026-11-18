@@ -1,9 +1,6 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('administrator sees persisted counts and downloads the internal aggregate report', async ({ page }) => {
-  const errors: string[] = [];
-  page.on('pageerror', error => errors.push(error.message));
-  page.on('console', message => { if (message.type() === 'error' && !message.text().includes('401')) errors.push(message.text()); });
   const email = process.env.E2E_ADMIN_EMAIL, password = process.env.E2E_ADMIN_PASSWORD;
   if (!email || !password) throw new Error('Set E2E_ADMIN_EMAIL and E2E_ADMIN_PASSWORD to local bootstrap credentials');
   await page.goto('/');
@@ -32,5 +29,64 @@ test('administrator sees persisted counts and downloads the internal aggregate r
   expect((await download).suggestedFilename()).toBe('eqip-overview.csv');
   await page.reload();
   await expect(page.getByText('Segments', { exact: true }).locator('..').locator('dd')).toHaveText(String(before + 1));
-  expect(errors).toEqual([]);
+});
+
+test('executive can view and export aggregates but not user or application records, while viewer is denied', async ({ page }) => {
+  const email = process.env.E2E_ADMIN_EMAIL, password = process.env.E2E_ADMIN_PASSWORD;
+  if (!email || !password) throw new Error('Set E2E_ADMIN_EMAIL and E2E_ADMIN_PASSWORD to local bootstrap credentials');
+  const suffix = `${Date.now()}`;
+  const executiveEmail = `executive-${suffix}@example.test`, viewerEmail = `viewer-${suffix}@example.test`;
+  const localPassword = 'local-password-for-testing';
+  await page.goto('/');
+  await page.getByLabel('Email').fill(email);
+  await page.getByLabel('Password').fill(password);
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await expect(page.getByRole('button', { name: 'Sign out' })).toBeVisible();
+  for (const [role, userEmail] of [['executive', executiveEmail], ['viewer', viewerEmail]]) {
+    const response = await page.request.post('/api/v1/users', { data: { name: role, email: userEmail, password: localPassword, role, status: 'active', segmentId: null } });
+    expect(response.status()).toBe(201);
+  }
+  await page.getByRole('button', { name: 'Sign out' }).click();
+  await page.getByLabel('Email').fill(executiveEmail);
+  await page.getByLabel('Password').fill(localPassword);
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await page.getByRole('link', { name: 'Executive overview' }).click();
+  await expect(page.getByText('Active users', { exact: true }).locator('..').locator('dd')).toHaveText(/\d+/);
+  const response = page.waitForResponse(result => result.url().endsWith('/api/v1/overview/report.csv'));
+  const download = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Download CSV' }).click();
+  const report = await response;
+  expect(report.status()).toBe(200);
+  expect(await report.text()).not.toContain(executiveEmail);
+  expect((await download).suggestedFilename()).toBe('eqip-overview.csv');
+  expect((await page.request.get('/api/v1/users')).status()).toBe(403);
+  expect((await page.request.get('/api/v1/applications')).status()).toBe(403);
+  await expect(page.getByRole('link', { name: 'Users' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Applications' })).toHaveCount(0);
+  const executiveDeniedPage = await page.context().newPage();
+  const executiveErrors: string[] = [];
+  executiveDeniedPage.on('pageerror', error => executiveErrors.push(error.message));
+  executiveDeniedPage.on('console', message => { if (message.type() === 'error') executiveErrors.push(message.text()); });
+  await executiveDeniedPage.goto('/users');
+  await expect(executiveDeniedPage.getByRole('alert')).toHaveText('Administrator access required.');
+  expect(executiveErrors).toEqual([]);
+  await executiveDeniedPage.close();
+  await page.getByRole('link', { name: 'Portal home' }).click();
+  await page.getByRole('button', { name: 'Sign out' }).click();
+  await page.getByLabel('Email').fill(viewerEmail);
+  await page.getByLabel('Password').fill(localPassword);
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await expect(page.getByRole('button', { name: 'Sign out' })).toBeVisible();
+  expect((await page.request.get('/api/v1/overview')).status()).toBe(403);
+  expect((await page.request.get('/api/v1/overview/report.csv')).status()).toBe(403);
+  await expect(page.getByRole('link', { name: 'Executive overview' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Applications' })).toHaveCount(0);
+  const viewerDeniedPage = await page.context().newPage();
+  const viewerErrors: string[] = [];
+  viewerDeniedPage.on('pageerror', error => viewerErrors.push(error.message));
+  viewerDeniedPage.on('console', message => { if (message.type() === 'error') viewerErrors.push(message.text()); });
+  await viewerDeniedPage.goto('/overview');
+  await expect(viewerDeniedPage.getByRole('alert')).toHaveText('Administrator or executive access required.');
+  expect(viewerErrors).toEqual([]);
+  await viewerDeniedPage.close();
 });

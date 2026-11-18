@@ -1,9 +1,6 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('administrator creates and edits a persisted segment', async ({ page }) => {
-  const errors: string[] = [];
-  page.on('pageerror', error => errors.push(error.message));
-  page.on('console', message => { if (message.type() === 'error' && !message.text().includes('401')) errors.push(message.text()); });
   const email = process.env.E2E_ADMIN_EMAIL;
   const password = process.env.E2E_ADMIN_PASSWORD;
   if (!email || !password) throw new Error('Set E2E_ADMIN_EMAIL and E2E_ADMIN_PASSWORD to the local bootstrap credentials');
@@ -26,5 +23,4 @@ test('administrator creates and edits a persisted segment', async ({ page }) => 
   await expect(row).toContainText('Updated owner');
   await page.reload();
   await expect(page.getByRole('row').filter({ hasText: name })).toContainText('Updated owner');
-  expect(errors).toEqual([]);
 });

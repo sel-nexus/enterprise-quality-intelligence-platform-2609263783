@@ -77,6 +77,43 @@ describe('executive overview with file SQLite', () => {
     await request(server).get('/api/v1/overview/report.csv').set('Authorization', `Bearer ${token}`).expect(403);
   });
 
+  it('allows executives only the aggregate overview and report, not user or application records', async () => {
+    const server = app.getHttpServer();
+    const segment = app.get(SegmentsService).create({ name: 'Confidential segment', owner: 'Private owner' });
+    const application = app.get(ApplicationsService).create({ name: 'Private application', owner: 'Private owner', segmentId: segment.id, lifecycle: 'Production', criticality: 'High' });
+    const executive = app.get(UsersService).create({ name: 'Executive', email: 'executive@example.test', password: 'local-password-123', role: 'executive', status: 'active', segmentId: null }, actor);
+    const executiveToken = app.get(AuthService).login('executive@example.test', 'local-password-123').token;
+    const authorization = `Bearer ${executiveToken}`;
+    const overview = await request(server).get('/api/v1/overview').set('Authorization', authorization).expect(200);
+    expect(overview.body).toEqual({ counts: { segments: 1, applications: 1, activeUsers: 2 }, qualityScore: null });
+    expect(overview.headers['cache-control']).toBe('no-store');
+    const report = await request(server).get('/api/v1/overview/report.csv').set('Authorization', authorization).expect(200);
+    expect(report.headers['content-type']).toMatch(/^text\/csv/);
+    expect(report.headers['cache-control']).toBe('no-store');
+    expect(report.text).toBe('"Sensitivity","Internal"\r\n"Metric","Value"\r\n"Segments","1"\r\n"Applications","1"\r\n"Active users","2"\r\n"Quality score","Unavailable"\r\n');
+    for (const path of ['/api/v1/users', '/api/v1/applications']) {
+      await request(server).get(path).set('Authorization', authorization).expect(403);
+    }
+    await request(server).put(`/api/v1/users/${executive.id}`).set('Authorization', authorization).send({}).expect(403);
+    await request(server).put(`/api/v1/applications/${application.id}`).set('Authorization', authorization).send({}).expect(403);
+    app.get(Database).db.prepare('UPDATE users SET role = ? WHERE id = ?').run('viewer', executive.id);
+    for (const path of ['/api/v1/overview', '/api/v1/overview/report.csv']) {
+      await request(server).get(path).set('Authorization', authorization).expect(403);
+    }
+  });
+
+  it('denies every other defined role on both aggregate endpoints', async () => {
+    const roles = ['segment_leader', 'qe_leader', 'qe_manager', 'engineer', 'release_manager', 'auditor', 'vendor', 'viewer'];
+    for (const role of roles) {
+      const email = `${role}@example.test`;
+      app.get(UsersService).create({ name: role, email, password: 'local-password-123', role, status: 'active', segmentId: null }, actor);
+      const otherToken = app.get(AuthService).login(email, 'local-password-123').token;
+      for (const path of ['/api/v1/overview', '/api/v1/overview/report.csv']) {
+        await request(app.getHttpServer()).get(path).set('Authorization', `Bearer ${otherToken}`).expect(403);
+      }
+    }
+  });
+
   it('does not present a database failure as zero counts or a successful report', async () => {
     app.get(Database).db.exec('DROP TABLE applications');
     expect(() => app.get(OverviewService).getOverview()).toThrow();

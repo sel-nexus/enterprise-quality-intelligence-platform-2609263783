@@ -1,9 +1,6 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('administrator creates and updates a persisted local user', async ({ page }) => {
-  const errors: string[] = [];
-  page.on('pageerror', error => errors.push(error.message));
-  page.on('console', message => { if (message.type() === 'error' && !message.text().includes('401')) errors.push(message.text()); });
   const email = process.env.E2E_ADMIN_EMAIL, password = process.env.E2E_ADMIN_PASSWORD;
   if (!email || !password) throw new Error('Set E2E_ADMIN_EMAIL and E2E_ADMIN_PASSWORD to local bootstrap credentials');
   const suffix = `${Date.now()}`;
@@ -35,5 +32,4 @@ test('administrator creates and updates a persisted local user', async ({ page }
   await page.reload();
   await expect(page.getByRole('row').filter({ hasText: userEmail })).toContainText('auditor');
   await expect(page.getByRole('row').filter({ hasText: userEmail })).toContainText('disabled');
-  expect(errors).toEqual([]);
 });

@@ -73,6 +73,70 @@ describe('local auth with file-backed SQLite', () => {
     await request(app.getHttpServer()).get('/api/v1/auth/me').set('Authorization', `Bearer ${forged}`).expect(401);
   });
 
+  it('rejects malformed, missing, blank, wrong-type and oversized login input without establishing a session', async () => {
+    const server = app.getHttpServer();
+    const before = db.db.prepare('SELECT * FROM users ORDER BY id').all();
+    const valid = { email: 'admin@example.test', password };
+    const cases: { label: string; body: unknown; status: number }[] = [
+      { label: 'null body', body: null, status: 400 },
+      { label: 'array body', body: [], status: 400 },
+      { label: 'string body', body: 'login', status: 400 },
+      { label: 'number body', body: 42, status: 400 },
+      { label: 'empty object', body: {}, status: 400 },
+      { label: 'missing email', body: { password }, status: 400 },
+      { label: 'missing password', body: { email: valid.email }, status: 400 },
+      { label: 'empty email', body: { ...valid, email: '' }, status: 400 },
+      { label: 'blank email', body: { ...valid, email: ' \t ' }, status: 400 },
+      { label: 'empty password', body: { ...valid, password: '' }, status: 400 },
+      // Passwords are not trimmed; whitespace is an incorrect credential, not a malformed field.
+      { label: 'blank password', body: { ...valid, password: '   ' }, status: 401 },
+      ...(['email', 'password'] as const).flatMap(field => [null, 0, false, [], {}].map(value => ({
+        label: `${field} has type ${JSON.stringify(value)}`, body: { ...valid, [field]: value }, status: 400
+      }))),
+      { label: 'one-character email', body: { ...valid, email: 'x' }, status: 401 },
+      { label: 'maximum email', body: { ...valid, email: 'x'.repeat(254) }, status: 401 },
+      { label: 'email above maximum', body: { ...valid, email: 'x'.repeat(255) }, status: 400 },
+      { label: 'one-character password', body: { ...valid, password: 'x' }, status: 401 },
+      { label: 'maximum password', body: { ...valid, password: 'x'.repeat(1024) }, status: 401 },
+      { label: 'password above maximum', body: { ...valid, password: 'x'.repeat(1025) }, status: 400 },
+      { label: 'body exceeds JSON limit', body: { ...valid, password: 'x'.repeat(110_000) }, status: 413 }
+    ];
+    for (const { label, body, status } of cases) {
+      const agent = request.agent(server);
+      const response = await agent.post('/api/v1/auth/login').set('Content-Type', 'application/json').send(JSON.stringify(body));
+      expect([label, response.status]).toEqual([label, status]);
+      expect(response.headers['set-cookie']).toBeUndefined();
+      expect(response.body.token).toBeUndefined();
+      await agent.get('/api/v1/auth/me').expect(401);
+      expect(db.db.prepare('SELECT * FROM users ORDER BY id').all()).toEqual(before);
+    }
+    const emptyAgent = request.agent(server);
+    const emptyBody = await emptyAgent.post('/api/v1/auth/login');
+    expect(emptyBody.status).toBe(400);
+    expect(emptyBody.headers['set-cookie']).toBeUndefined();
+    expect(emptyBody.body.token).toBeUndefined();
+    await emptyAgent.get('/api/v1/auth/me').expect(401);
+    expect(db.db.prepare('SELECT * FROM users ORDER BY id').all()).toEqual(before);
+
+    const agent = request.agent(server);
+    const malformed = await agent.post('/api/v1/auth/login').set('Content-Type', 'application/json').send('{"email":');
+    expect(malformed.status).toBe(400);
+    expect(malformed.headers['set-cookie']).toBeUndefined();
+    expect(malformed.body.token).toBeUndefined();
+    await agent.get('/api/v1/auth/me').expect(401);
+    expect(db.db.prepare('SELECT * FROM users ORDER BY id').all()).toEqual(before);
+
+    // Limits are inclusive: genuine credentials at both maximum lengths can authenticate.
+    const maxEmail = 'a'.repeat(241) + '@example.test';
+    const maxPassword = 'p'.repeat(1024);
+    db.db.prepare('UPDATE users SET email=?, password_hash=?').run(maxEmail, hashPassword(maxPassword));
+    const boundaryAgent = request.agent(server);
+    const boundary = await boundaryAgent.post('/api/v1/auth/login').send({ email: maxEmail, password: maxPassword }).expect(201);
+    expect(boundary.headers['set-cookie'][0]).toContain('eqip_session=');
+    expect(boundary.body.token).toEqual(expect.any(String));
+    await boundaryAgent.get('/api/v1/auth/me').expect(200).expect(({ body }) => expect(body.email).toBe(maxEmail));
+  });
+
   it('logs in, resolves identity via cookie or bearer and rejects disabled accounts', async () => {
     const result = await request(app.getHttpServer()).post('/api/v1/auth/login').send({ email: 'admin@example.test', password }).expect(201);
     expect(result.body.user).toMatchObject({ email: 'admin@example.test', name: 'Test Admin', role: 'admin' });

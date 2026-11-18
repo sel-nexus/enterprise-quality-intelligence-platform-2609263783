@@ -1,6 +1,8 @@
 # EQIP local portal foundation
 
-This slice provides a local, nonproduction NestJS API, SQLite identity store, and React sign-in and portal shell. No enterprise SSO, user administration, inventory, reporting, or quality metrics are implemented. This is not production-ready.
+This slice provides a local, nonproduction NestJS API, SQLite identity store, inventory and user administration, and a React portal. Enterprise SSO and quality metrics are not implemented. This is not production-ready.
+
+Administrators and executives can view and export enterprise-wide segment, application, and active-user counts through the overview and its internal CSV report. The report contains fixed aggregates only, not individual user records or application details; quality scores are unavailable. Other roles cannot access either overview endpoint. User and application inventory access remains administrator-only; the overview grant does not extend to those details.
 
 ## Local setup
 
@@ -32,13 +34,13 @@ cd backend && npm test -- auth
 cd frontend && npm test
 ```
 
-For the browser spec, start both local servers with a disposable SQLite file and the chosen local bootstrap credentials, then run from `frontend`:
+For browser tests, install dependencies in both tiers and Playwright Chromium (`cd frontend && node node_modules/@playwright/test/cli.js install chromium`). Then run from `frontend`:
 
 ```sh
-E2E_ADMIN_EMAIL='your-local-email' E2E_ADMIN_PASSWORD='your-local-password' node node_modules/@playwright/test/cli.js test
+node node_modules/@playwright/test/cli.js test
 ```
 
-Install Playwright Chromium using `node node_modules/@playwright/test/cli.js install chromium` if needed. The E2E spec uses the live API and must never target production.
+Playwright builds and starts two isolated local backend/frontend pairs (ports 4300/4173 and 4301/4174) with fresh temporary SQLite databases. It generates disposable administrator credentials and an authentication secret in memory; do not use production credentials or data. All four ports must be free. The second pair is reserved for the fresh-database journey. Servers and temporary databases are removed on normal shutdown. Test screenshots are saved under `frontend/test-results/`, including mobile, loading, and empty states; `frontend/e2e-results.json` records results.
 
 ## Security and operational limitations
 

@@ -1,11 +1,11 @@
-/** Protect executive aggregate and report data with the local administrator role. */
+/** Protect aggregate overview and report data for administrators and executives. */
 import { Controller, Get, Header, UseGuards } from '@nestjs/common';
 import { AuthGuard, Roles } from '../auth/auth.guard';
 import { OverviewService } from './overview.service';
 
 @Controller('api/v1/overview')
 @UseGuards(AuthGuard)
-@Roles('admin')
+@Roles('admin', 'executive')
 export class OverviewController {
   constructor(private readonly overview: OverviewService) {}
 

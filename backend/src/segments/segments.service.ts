@@ -14,6 +14,10 @@ function fields(body: unknown): { name: string; owner: string } {
       !record.name.trim() || !record.owner.trim() || record.name.trim().length > 120 || record.owner.trim().length > 120) {
     throw new BadRequestException('Name and owner are required and must be at most 120 characters');
   }
+  // Segment labels are plain text: reject tag/declaration openings, not ordinary punctuation.
+  if (/<\s*(?:[a-z!/?])/i.test(record.name) || /<\s*(?:[a-z!/?])/i.test(record.owner)) {
+    throw new BadRequestException('Name and owner must not contain HTML-like markup');
+  }
   return { name: record.name.trim(), owner: record.owner.trim() };
 }
 
