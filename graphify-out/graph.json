@@ -455,7 +455,7 @@
       "label": "HealthController",
       "file_type": "code",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L11",
+      "source_location": "L13",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -484,7 +484,7 @@
       "label": ".health()",
       "file_type": "code",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L13",
+      "source_location": "L15",
       "_callable": true,
       "_origin": "ast",
       "community": 13
@@ -494,7 +494,7 @@
       "label": "AppModule",
       "file_type": "code",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L17",
+      "source_location": "L19",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -508,6 +508,230 @@
       "source_location": "",
       "_origin": "ast",
       "community": 0
+    },
+    {
+      "id": "backend_src_applications_applications_controller",
+      "label": "applications.controller.ts",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_applicationscontroller",
+      "label": "ApplicationsController",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_ts_fields": {
+        "applications": "ApplicationsService"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_ts_controller",
+      "label": "Controller",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_ts_useguards",
+      "label": "UseGuards",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_ts_get",
+      "label": "Get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "query",
+      "label": "Query",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_ts_post",
+      "label": "Post",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_ts_body",
+      "label": "Body",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_ts_put",
+      "label": "Put",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_ts_param",
+      "label": "Param",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_applicationscontroller_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_applicationscontroller_list",
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L14",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_applicationscontroller_create",
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_controller_applicationscontroller_update",
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service",
+      "label": "applications.service.ts",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_application",
+      "label": "Application",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L6",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_fields",
+      "label": "Fields",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L7",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_applicationsservice",
+      "label": "ApplicationsService",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L23",
+      "_callable": true,
+      "_callable_class": true,
+      "_ts_fields": {
+        "database": "Database"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_ts_injectable",
+      "label": "Injectable",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_applicationsservice_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_applicationsservice_list",
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L27",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_applicationsservice_create",
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_applicationsservice_update",
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L46",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_applicationsservice_checksegment",
+      "label": ".checkSegment()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L57",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_src_applications_applications_service_applicationsservice_handlewriteerror",
+      "label": ".handleWriteError()",
+      "file_type": "code",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L62",
+      "_callable": true,
+      "_origin": "ast"
     },
     {
       "id": "backend_src_auth_auth_controller",
@@ -906,7 +1130,7 @@
       "label": ".onModuleDestroy()",
       "file_type": "code",
       "source_file": "backend/src/database.ts",
-      "source_location": "L28",
+      "source_location": "L34",
       "_callable": true,
       "metadata": {
         "unresolved_calls": [
@@ -914,7 +1138,7 @@
             "callee": "close",
             "receiver_type": "DatabaseSync",
             "lang": "typescript",
-            "line": "L28"
+            "line": "L34"
           }
         ]
       },
@@ -1002,7 +1226,7 @@
       "_origin": "ast"
     },
     {
-      "id": "put",
+      "id": "backend_src_segments_segments_controller_ts_put",
       "label": "Put",
       "file_type": "code",
       "source_file": "",
@@ -1010,7 +1234,7 @@
       "_origin": "ast"
     },
     {
-      "id": "param",
+      "id": "backend_src_segments_segments_controller_ts_param",
       "label": "Param",
       "file_type": "code",
       "source_file": "",
@@ -1135,6 +1359,14 @@
       "source_file": "backend/src/segments/segments.service.ts",
       "source_location": "L43",
       "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_test_applications_test",
+      "label": "applications.test.ts",
+      "file_type": "code",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L1",
       "_origin": "ast"
     },
     {
@@ -1347,6 +1579,14 @@
       "source_location": "L8",
       "_origin": "ast",
       "community": 4
+    },
+    {
+      "id": "frontend_e2e_applications_spec",
+      "label": "applications.spec.ts",
+      "file_type": "code",
+      "source_file": "frontend/e2e/applications.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast"
     },
     {
       "id": "frontend_e2e_auth_spec",
@@ -1753,6 +1993,112 @@
       "community": 3
     },
     {
+      "id": "frontend_src_applications_test",
+      "label": "Applications.test.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_test_json",
+      "label": "json()",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L8",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_test_segment",
+      "label": "segment",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_test_app",
+      "label": "app",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications",
+      "label": "Applications.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_application",
+      "label": "Application",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L4",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_segment",
+      "label": "Segment",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L5",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_props",
+      "label": "Props",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L6",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_blank",
+      "label": "blank",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_request",
+      "label": "request()",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_applications",
+      "label": "Applications()",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_applications_applications_save",
+      "label": "save()",
+      "file_type": "code",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L48",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_login_test",
       "label": "Login.test.tsx",
       "file_type": "code",
@@ -1887,7 +2233,7 @@
       "label": "Props",
       "file_type": "code",
       "source_file": "frontend/src/Shell.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -1898,7 +2244,7 @@
       "label": "Shell()",
       "file_type": "code",
       "source_file": "frontend/src/Shell.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_callable": true,
       "_origin": "ast",
       "community": 3
@@ -2751,11 +3097,55 @@
     },
     {
       "source": "backend_src_app_module",
+      "target": "backend_src_applications_applications_controller",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/app.module.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_app_module",
+      "target": "backend_src_applications_applications_controller_applicationscontroller",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/app.module.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_app_module",
+      "target": "backend_src_applications_applications_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/app.module.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_app_module",
+      "target": "backend_src_applications_applications_service_applicationsservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/app.module.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_app_module",
       "target": "backend_src_app_module_healthcontroller",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2765,7 +3155,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -2776,7 +3166,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -2787,7 +3177,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2797,7 +3187,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2807,9 +3197,445 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/app.module.ts",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller",
+      "target": "ref_nestjs_common",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller",
+      "target": "backend_src_auth_auth_guard",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller",
+      "target": "backend_src_auth_auth_guard_authguard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller",
+      "target": "backend_src_auth_auth_guard_roles",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller",
+      "target": "backend_src_applications_applications_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller",
+      "target": "backend_src_applications_applications_service_applicationsservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller",
+      "target": "backend_src_applications_applications_controller_applicationscontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller",
+      "target": "backend_src_applications_applications_controller_ts_controller",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller",
+      "target": "backend_src_applications_applications_controller_ts_useguards",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_list",
+      "target": "backend_src_applications_applications_controller_ts_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_list",
+      "target": "backend_src_auth_auth_guard_roles",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_list",
+      "target": "query",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_create",
+      "target": "backend_src_applications_applications_controller_ts_post",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_create",
+      "target": "backend_src_auth_auth_guard_roles",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_create",
+      "target": "backend_src_applications_applications_controller_ts_body",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_update",
+      "target": "backend_src_applications_applications_controller_ts_put",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_update",
+      "target": "backend_src_auth_auth_guard_roles",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_update",
+      "target": "backend_src_applications_applications_controller_ts_param",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_update",
+      "target": "backend_src_applications_applications_controller_ts_body",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller",
+      "target": "backend_src_applications_applications_controller_applicationscontroller_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller",
+      "target": "backend_src_applications_applications_controller_applicationscontroller_list",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller",
+      "target": "backend_src_applications_applications_controller_applicationscontroller_create",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller",
+      "target": "backend_src_applications_applications_controller_applicationscontroller_update",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service",
+      "target": "ref_nestjs_common",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service",
+      "target": "backend_src_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service",
+      "target": "backend_src_database_database",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service",
+      "target": "backend_src_applications_applications_service_application",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service",
+      "target": "backend_src_applications_applications_service_fields",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service",
+      "target": "backend_src_applications_applications_service_fields",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service",
+      "target": "backend_src_applications_applications_service_applicationsservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice",
+      "target": "backend_src_applications_applications_service_ts_injectable",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice",
+      "target": "backend_src_applications_applications_service_applicationsservice_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice",
+      "target": "backend_src_applications_applications_service_applicationsservice_list",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice",
+      "target": "backend_src_applications_applications_service_applicationsservice_create",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice",
+      "target": "backend_src_applications_applications_service_applicationsservice_update",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice",
+      "target": "backend_src_applications_applications_service_applicationsservice_checksegment",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice",
+      "target": "backend_src_applications_applications_service_applicationsservice_handlewriteerror",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice_create",
+      "target": "backend_src_applications_applications_service_applicationsservice_checksegment",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice_create",
+      "target": "backend_src_applications_applications_service_applicationsservice_handlewriteerror",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice_update",
+      "target": "backend_src_applications_applications_service_applicationsservice_checksegment",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice_update",
+      "target": "backend_src_applications_applications_service_applicationsservice_handlewriteerror",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L52",
+      "weight": 1.0,
       "_origin": "ast"
     },
     {
@@ -3380,7 +4206,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/database.ts",
-      "source_location": "L28",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3593,7 +4419,7 @@
     },
     {
       "source": "backend_src_segments_segments_controller_segmentscontroller_update",
-      "target": "put",
+      "target": "backend_src_segments_segments_controller_ts_put",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/segments/segments.controller.ts",
@@ -3615,7 +4441,7 @@
     },
     {
       "source": "backend_src_segments_segments_controller_segmentscontroller_update",
-      "target": "param",
+      "target": "backend_src_segments_segments_controller_ts_param",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/segments/segments.controller.ts",
@@ -3808,6 +4634,160 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/src/segments/segments.service.ts",
       "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "ref_reflect_metadata",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "ref_nestjs_common",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "ref_nestjs_testing",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "ref_supertest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_app_module",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_app_module_appmodule",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_auth_auth_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_auth_auth_service_authservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_database_database",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_segments_segments_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_segments_segments_service_segmentsservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_applications_applications_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_test_applications_test",
+      "target": "backend_src_applications_applications_service_applicationsservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/applications.test.ts",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4331,6 +5311,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tsconfig.json",
       "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_applications_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/applications.spec.ts",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4859,6 +5850,194 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_applications_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_test",
+      "target": "ref_testing_library_jest_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_test",
+      "target": "frontend_src_applications",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_test",
+      "target": "frontend_src_applications_test_json",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_test",
+      "target": "frontend_src_applications_test_segment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_test",
+      "target": "frontend_src_applications_test_app",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_test",
+      "target": "frontend_src_applications_test_json",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications",
+      "target": "frontend_src_applications_application",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications",
+      "target": "frontend_src_applications_segment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications",
+      "target": "frontend_src_applications_props",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications",
+      "target": "frontend_src_applications_blank",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications",
+      "target": "frontend_src_applications_request",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications",
+      "target": "frontend_src_applications_applications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_applications",
+      "target": "frontend_src_applications_applications_save",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_applications_applications",
+      "target": "frontend_src_applications_request",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_login_test",
       "target": "ref_vitest",
       "relation": "imports_from",
@@ -5171,11 +6350,22 @@
     },
     {
       "source": "frontend_src_shell",
+      "target": "frontend_src_applications",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Shell.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_shell",
       "target": "frontend_src_shell_props",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/Shell.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5185,7 +6375,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/Shell.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5469,6 +6659,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_applications_test",
+      "target": "frontend_src_applications_applications",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Applications.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_login_test",
       "target": "frontend_src_login_login",
       "relation": "imports",
@@ -5498,6 +6699,17 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/Shell.tsx",
       "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_shell",
+      "target": "frontend_src_applications_applications",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/Shell.tsx",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5542,6 +6754,28 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/Login.tsx",
       "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_constructor",
+      "target": "backend_src_applications_applications_service_applicationsservice",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_service_applicationsservice_constructor",
+      "target": "backend_src_database_database",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/applications/applications.service.ts",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5651,7 +6885,7 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/Shell.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5711,7 +6945,55 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/Shell.tsx",
-      "source_location": "L28",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_shell_shell",
+      "target": "frontend_src_applications_applications",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/Shell.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_list",
+      "target": "backend_src_applications_applications_service_applicationsservice_list",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_create",
+      "target": "backend_src_applications_applications_service_applicationsservice_create",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_src_applications_applications_controller_applicationscontroller_update",
+      "target": "backend_src_applications_applications_service_applicationsservice_update",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/src/applications/applications.controller.ts",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5776,88 +7058,121 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_src_auth_auth_service_authservice",
-      "target": "backend_src_auth_auth_controller_authcontroller_constructor",
+      "source": "backend_src_app_module_ts_get",
+      "target": "backend_src_app_module_healthcontroller_health",
       "relation": "references",
-      "_origin": "ast",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "parameter_type",
-      "source_file": "backend/src/auth/auth.controller.ts",
-      "source_location": "L9",
+      "source_file": "backend/src/app.module.ts",
+      "source_location": "L13",
       "weight": 1.0,
-      "_src": "backend_src_auth_auth_controller_authcontroller_constructor",
-      "_tgt": "backend_src_auth_auth_service_authservice"
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_app_module_healthcontroller_health",
+      "_tgt": "backend_src_app_module_ts_get"
     },
     {
-      "source": "backend_src_auth_auth_service_authservice",
-      "target": "backend_src_auth_auth_guard_authguard_constructor",
+      "source": "backend_src_auth_auth_controller_ts_post",
+      "target": "backend_src_auth_auth_controller_authcontroller_login",
       "relation": "references",
-      "_origin": "ast",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "parameter_type",
-      "source_file": "backend/src/auth/auth.guard.ts",
+      "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "_src": "backend_src_auth_auth_guard_authguard_constructor",
-      "_tgt": "backend_src_auth_auth_service_authservice"
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_auth_auth_controller_authcontroller_login",
+      "_tgt": "backend_src_auth_auth_controller_ts_post"
     },
     {
-      "source": "backend_src_database_database",
-      "target": "backend_src_auth_auth_service_authservice_constructor",
+      "source": "backend_src_auth_auth_controller_ts_post",
+      "target": "backend_src_auth_auth_controller_authcontroller_logout",
       "relation": "references",
-      "_origin": "ast",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "parameter_type",
-      "source_file": "backend/src/auth/auth.service.ts",
+      "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L28",
       "weight": 1.0,
-      "_src": "backend_src_auth_auth_service_authservice_constructor",
-      "_tgt": "backend_src_database_database"
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_auth_auth_controller_authcontroller_logout",
+      "_tgt": "backend_src_auth_auth_controller_ts_post"
     },
     {
-      "source": "backend_src_auth_auth_guard_authenticatedrequest",
+      "source": "backend_src_auth_auth_controller_ts_body",
+      "target": "backend_src_auth_auth_controller_authcontroller_login",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/auth.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_auth_auth_controller_authcontroller_login",
+      "_tgt": "backend_src_auth_auth_controller_ts_body"
+    },
+    {
+      "source": "res",
+      "target": "backend_src_auth_auth_controller_authcontroller_login",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/auth.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_auth_auth_controller_authcontroller_login",
+      "_tgt": "res"
+    },
+    {
+      "source": "res",
+      "target": "backend_src_auth_auth_controller_authcontroller_logout",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/auth.controller.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_auth_auth_controller_authcontroller_logout",
+      "_tgt": "res"
+    },
+    {
+      "source": "backend_src_auth_auth_controller_ts_get",
       "target": "backend_src_auth_auth_controller_authcontroller_me",
       "relation": "references",
-      "_origin": "ast",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "parameter_type",
+      "source_file": "backend/src/auth/auth.controller.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_auth_auth_controller_authcontroller_me",
+      "_tgt": "backend_src_auth_auth_controller_ts_get"
+    },
+    {
+      "source": "backend_src_auth_auth_controller_ts_useguards",
+      "target": "backend_src_auth_auth_controller_authcontroller_me",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/auth.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_auth_auth_controller_authcontroller_me",
+      "_tgt": "backend_src_auth_auth_controller_ts_useguards"
+    },
+    {
+      "source": "req",
+      "target": "backend_src_auth_auth_controller_authcontroller_me",
+      "relation": "references",
+      "confidence": "EXTRACTED",
       "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
       "_src": "backend_src_auth_auth_controller_authcontroller_me",
-      "_tgt": "backend_src_auth_auth_guard_authenticatedrequest"
-    },
-    {
-      "source": "frontend_src_api_user",
-      "target": "frontend_src_login_props",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "frontend/src/Login.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "frontend_src_login_props",
-      "_tgt": "frontend_src_api_user"
-    },
-    {
-      "source": "frontend_src_api_user",
-      "target": "frontend_src_shell_props",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "frontend/src/Shell.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_src": "frontend_src_shell_props",
-      "_tgt": "frontend_src_api_user"
+      "_tgt": "req"
     },
     {
       "source": "backend_src_auth_auth_guard_roles",
@@ -5870,15 +7185,132 @@
       "source_file": "backend/test/auth.test.ts",
       "source_location": "L18",
       "weight": 1.0,
-      "_src": "backend_test_auth_test_roletestcontroller_admin",
+      "_src": "backend_src_auth_auth_guard_roles",
+      "_tgt": "backend_test_auth_test_roletestcontroller_admin"
+    },
+    {
+      "source": "backend_src_auth_auth_guard_roles",
+      "target": "backend_src_segments_segments_controller_segmentscontroller_create",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/segments/segments.controller.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_segments_segments_controller_segmentscontroller_create",
       "_tgt": "backend_src_auth_auth_guard_roles"
+    },
+    {
+      "source": "backend_src_auth_auth_guard_roles",
+      "target": "backend_src_segments_segments_controller_segmentscontroller_update",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/segments/segments.controller.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_segments_segments_controller_segmentscontroller_update",
+      "_tgt": "backend_src_auth_auth_guard_roles"
+    },
+    {
+      "source": "backend_src_database_database",
+      "target": "backend_src_segments_segments_service_segmentsservice_constructor",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/segments/segments.service.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_src_segments_segments_service_segmentsservice_constructor",
+      "_tgt": "backend_src_database_database"
+    },
+    {
+      "source": "backend_src_segments_segments_controller_ts_get",
+      "target": "backend_src_segments_segments_controller_segmentscontroller_list",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/segments/segments.controller.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_segments_segments_controller_segmentscontroller_list",
+      "_tgt": "backend_src_segments_segments_controller_ts_get"
+    },
+    {
+      "source": "backend_src_segments_segments_controller_ts_post",
+      "target": "backend_src_segments_segments_controller_segmentscontroller_create",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/segments/segments.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_segments_segments_controller_segmentscontroller_create",
+      "_tgt": "backend_src_segments_segments_controller_ts_post"
+    },
+    {
+      "source": "backend_src_segments_segments_controller_ts_body",
+      "target": "backend_src_segments_segments_controller_segmentscontroller_create",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/segments/segments.controller.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_segments_segments_controller_segmentscontroller_create",
+      "_tgt": "backend_src_segments_segments_controller_ts_body"
+    },
+    {
+      "source": "backend_src_segments_segments_controller_ts_body",
+      "target": "backend_src_segments_segments_controller_segmentscontroller_update",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/segments/segments.controller.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_src_segments_segments_controller_segmentscontroller_update",
+      "_tgt": "backend_src_segments_segments_controller_ts_body"
+    },
+    {
+      "source": "backend_test_auth_test_ts_get",
+      "target": "backend_test_auth_test_roletestcontroller_admin",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/auth.test.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_test_auth_test_roletestcontroller_admin",
+      "_tgt": "backend_test_auth_test_ts_get"
+    },
+    {
+      "source": "backend_test_auth_test_ts_useguards",
+      "target": "backend_test_auth_test_roletestcontroller_admin",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/test/auth.test.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_test_auth_test_roletestcontroller_admin",
+      "_tgt": "backend_test_auth_test_ts_useguards"
     }
   ],
   "metadata": {
-    "built_at": "2026-11-18T09:49:57.986861+00:00",
+    "built_at": "2026-11-18T09:52:48.259359+00:00",
     "version": "graph_update-v1",
     "codebase_root": "/data/artifacts-v2/T0132PcJVCRTV008118112609263783/developer",
     "force": true,
-    "files_scanned": 28
+    "files_scanned": 34
   }
 }

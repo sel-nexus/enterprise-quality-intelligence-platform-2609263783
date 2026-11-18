@@ -28,6 +28,22 @@ export class Database implements OnModuleDestroy {
         lifecycle TEXT NOT NULL CHECK (lifecycle IN ('Production', 'UAT', 'Pre-Prod', 'Retired')),
         criticality TEXT NOT NULL CHECK (criticality IN ('High', 'Medium', 'Low'))
       );`);
+    const columns = this.db.prepare('PRAGMA table_info(users)').all() as unknown as { name: string }[];
+    if (!columns.some(column => column.name === 'segment_id')) {
+      this.db.exec('ALTER TABLE users ADD COLUMN segment_id TEXT REFERENCES segments(id)');
+    }
+    this.db.exec(`CREATE TABLE IF NOT EXISTS user_access_audit (
+      id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), actor_id TEXT NOT NULL REFERENCES users(id),
+      field TEXT NOT NULL CHECK (field IN ('role', 'status', 'segmentId')),
+      old_value TEXT, new_value TEXT, occurred_at TEXT NOT NULL
+    );
+    CREATE TRIGGER IF NOT EXISTS user_access_audit_no_replace BEFORE INSERT ON user_access_audit
+      WHEN EXISTS (SELECT 1 FROM user_access_audit WHERE id = NEW.id)
+      BEGIN SELECT RAISE(ABORT, 'Audit events are immutable'); END;
+    CREATE TRIGGER IF NOT EXISTS user_access_audit_no_update BEFORE UPDATE ON user_access_audit
+      BEGIN SELECT RAISE(ABORT, 'Audit events are immutable'); END;
+    CREATE TRIGGER IF NOT EXISTS user_access_audit_no_delete BEFORE DELETE ON user_access_audit
+      BEGIN SELECT RAISE(ABORT, 'Audit events are immutable'); END;`);
   }
 
   /** Close the database on application shutdown. */
