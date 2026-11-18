@@ -10,6 +10,8 @@ import { ApplicationsController } from './applications/applications.controller';
 import { ApplicationsService } from './applications/applications.service';
 import { UsersController } from './users/users.controller';
 import { UsersService } from './users/users.service';
+import { OverviewController } from './overview/overview.controller';
+import { OverviewService } from './overview/overview.service';
 
 @Controller('api')
 export class HealthController {
@@ -17,5 +19,5 @@ export class HealthController {
   @Get('health') health() { return { status: 'ok' }; }
 }
 
-@Module({ controllers: [HealthController, AuthController, SegmentsController, ApplicationsController, UsersController], providers: [Database, AuthService, AuthGuard, SegmentsService, ApplicationsService, UsersService] })
+@Module({ controllers: [HealthController, AuthController, SegmentsController, ApplicationsController, UsersController, OverviewController], providers: [Database, AuthService, AuthGuard, SegmentsService, ApplicationsService, UsersService, OverviewService] })
 export class AppModule {}

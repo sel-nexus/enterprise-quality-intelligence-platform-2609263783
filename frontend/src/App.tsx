@@ -21,5 +21,5 @@ export default function App() {
   }
 
   if (loading) return <main className="loading" aria-live="polite">Checking your session…</main>;
-  return user ? <Shell user={user} onLogout={signOut} error={error} page={window.location.pathname === '/segments' ? 'segments' : window.location.pathname === '/applications' ? 'applications' : window.location.pathname === '/users' ? 'users' : 'home'} /> : <Login onLogin={setUser} />;
+  return user ? <Shell user={user} onLogout={signOut} error={error} page={window.location.pathname === '/segments' ? 'segments' : window.location.pathname === '/applications' ? 'applications' : window.location.pathname === '/users' ? 'users' : window.location.pathname === '/overview' ? 'overview' : 'home'} /> : <Login onLogin={setUser} />;
 }

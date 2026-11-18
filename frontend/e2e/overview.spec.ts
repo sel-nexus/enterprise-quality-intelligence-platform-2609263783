@@ -1,0 +1,36 @@
+import { expect, test } from '@playwright/test';
+
+test('administrator sees persisted counts and downloads the internal aggregate report', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error' && !message.text().includes('401')) errors.push(message.text()); });
+  const email = process.env.E2E_ADMIN_EMAIL, password = process.env.E2E_ADMIN_PASSWORD;
+  if (!email || !password) throw new Error('Set E2E_ADMIN_EMAIL and E2E_ADMIN_PASSWORD to local bootstrap credentials');
+  await page.goto('/');
+  await page.getByLabel('Email').fill(email);
+  await page.getByLabel('Password').fill(password);
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await page.getByRole('link', { name: 'Executive overview' }).click();
+  await expect(page.getByText('Active users', { exact: true }).locator('..').locator('dd')).not.toBeEmpty();
+  const before = Number(await page.getByText('Segments', { exact: true }).locator('..').locator('dd').textContent());
+  await page.getByRole('link', { name: 'Segments' }).click();
+  await page.getByLabel('Name').fill(`Overview segment ${Date.now()}`);
+  await page.getByLabel('Owner').fill('Owner');
+  await page.getByRole('button', { name: 'Create segment' }).click();
+  await expect(page.getByText('Segment created.')).toBeVisible();
+  const overviewResponse = page.waitForResponse(response => response.url().endsWith('/api/v1/overview') && response.status() === 200);
+  await page.getByRole('link', { name: 'Executive overview' }).click();
+  const body = await (await overviewResponse).json();
+  expect(body.counts.segments).toBe(before + 1);
+  await expect(page.getByText('Segments', { exact: true }).locator('..').locator('dd')).toHaveText(String(before + 1));
+  await expect(page.getByText(/Unavailable — quality scoring/)).toBeVisible();
+  const response = page.waitForResponse(result => result.url().endsWith('/api/v1/overview/report.csv'));
+  const download = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Download CSV' }).click();
+  expect((await response).status()).toBe(200);
+  expect(await (await response).text()).toContain('"Sensitivity","Internal"');
+  expect((await download).suggestedFilename()).toBe('eqip-overview.csv');
+  await page.reload();
+  await expect(page.getByText('Segments', { exact: true }).locator('..').locator('dd')).toHaveText(String(before + 1));
+  expect(errors).toEqual([]);
+});

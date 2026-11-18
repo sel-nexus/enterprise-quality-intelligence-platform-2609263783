@@ -3,8 +3,9 @@ import type { User } from './api';
 import Segments from './Segments';
 import Applications from './Applications';
 import Users from './Users';
+import Overview from './Overview';
 
-interface Props { user: User; onLogout: () => void; error: string; page: 'home' | 'segments' | 'applications' | 'users' }
+interface Props { user: User; onLogout: () => void; error: string; page: 'home' | 'segments' | 'applications' | 'users' | 'overview' }
 
 export default function Shell({ user, onLogout, error, page }: Props) {
   return (
@@ -14,6 +15,7 @@ export default function Shell({ user, onLogout, error, page }: Props) {
         <p className="rail-label">QUALITY INTELLIGENCE</p>
         <nav aria-label="Portal">
           <a href="/" aria-current={page === 'home' ? 'page' : undefined}>Portal home</a>
+          {user.role === 'admin' && <a href="/overview" aria-current={page === 'overview' ? 'page' : undefined}>Executive overview</a>}
           <a href="/segments" aria-current={page === 'segments' ? 'page' : undefined}>Segments</a>
           <a href="/applications" aria-current={page === 'applications' ? 'page' : undefined}>Applications</a>
           {user.role === 'admin' && <a href="/users" aria-current={page === 'users' ? 'page' : undefined}>Users</a>}
@@ -22,14 +24,14 @@ export default function Shell({ user, onLogout, error, page }: Props) {
       </aside>
       <div className="workspace">
         <header className="topbar">
-          <span>{page === 'home' ? 'Portal home' : page === 'segments' ? 'Segments' : page === 'applications' ? 'Applications' : 'Users'}</span>
+          <span>{page === 'home' ? 'Portal home' : page === 'segments' ? 'Segments' : page === 'applications' ? 'Applications' : page === 'overview' ? 'Executive overview' : 'Users'}</span>
           <div className="account">
             <span>{user.name}</span>
             <button className="secondary" onClick={onLogout}>Sign out</button>
           </div>
         </header>
         <main className="workspace-main">
-          {page === 'segments' ? <Segments isAdmin={user.role === 'admin'} /> : page === 'applications' ? <Applications isAdmin={user.role === 'admin'} /> : page === 'users' ? (user.role === 'admin' ? <Users /> : <p role="alert">Administrator access required.</p>) : <>
+          {page === 'segments' ? <Segments isAdmin={user.role === 'admin'} /> : page === 'applications' ? <Applications isAdmin={user.role === 'admin'} /> : page === 'users' ? (user.role === 'admin' ? <Users /> : <p role="alert">Administrator access required.</p>) : page === 'overview' ? (user.role === 'admin' ? <Overview /> : <p role="alert">Administrator access required.</p>) : <>
           <p className="eyebrow">EQIP / PORTAL HOME</p>
           <h1>Welcome, {user.name}.</h1>
           <p className="muted lead">Your local portal session is active.</p>
