@@ -18,6 +18,9 @@ export class Database implements OnModuleDestroy {
       CREATE TABLE IF NOT EXISTS users (
         id TEXT PRIMARY KEY, name TEXT NOT NULL, email TEXT NOT NULL UNIQUE,
         password_hash TEXT NOT NULL, role TEXT NOT NULL, status TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS segments (
+        id TEXT PRIMARY KEY, name TEXT NOT NULL COLLATE NOCASE UNIQUE, owner TEXT NOT NULL
       );`);
   }
 

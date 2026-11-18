@@ -1,0 +1,30 @@
+import { expect, test } from '@playwright/test';
+
+test('administrator creates and edits a persisted segment', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error' && !message.text().includes('401')) errors.push(message.text()); });
+  const email = process.env.E2E_ADMIN_EMAIL;
+  const password = process.env.E2E_ADMIN_PASSWORD;
+  if (!email || !password) throw new Error('Set E2E_ADMIN_EMAIL and E2E_ADMIN_PASSWORD to the local bootstrap credentials');
+  const name = `Segment ${Date.now()}`;
+  await page.goto('/');
+  await page.getByLabel('Email').fill(email);
+  await page.getByLabel('Password').fill(password);
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await page.getByRole('link', { name: 'Segments' }).click();
+  await page.getByLabel('Name').fill(name);
+  await page.getByLabel('Owner').fill('Original owner');
+  const created = page.waitForResponse(response => response.url().endsWith('/api/v1/segments') && response.request().method() === 'POST');
+  await page.getByRole('button', { name: 'Create segment' }).click();
+  expect((await created).status()).toBe(201);
+  const row = page.getByRole('row').filter({ hasText: name });
+  await expect(row).toContainText('Original owner');
+  await row.getByRole('button', { name: `Edit ${name}` }).click();
+  await page.getByLabel('Owner').fill('Updated owner');
+  await page.getByRole('button', { name: 'Save changes' }).click();
+  await expect(row).toContainText('Updated owner');
+  await page.reload();
+  await expect(page.getByRole('row').filter({ hasText: name })).toContainText('Updated owner');
+  expect(errors).toEqual([]);
+});
